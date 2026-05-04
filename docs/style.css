@@ -1,0 +1,247 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f0f8ff;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(120, 200, 255, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 180, 120, 0.3) 0%, transparent 50%);
+  min-height: 100vh;
+}
+
+main {
+  display: block;
+  min-height: 175px;
+  background: white;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+  border: 3px solid #ffb347;
+}
+
+header {
+  border-bottom: 3px dashed #4a90e2;
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  padding: 25px;
+  border-radius: 20px;
+  margin: -20px -20px 30px -20px;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+h1 {
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  text-align: center;
+  font-size: 32px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+p {
+  max-width: 600px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+footer {
+  padding-top: 25px;
+  border-top: 1px solid black;
+}
+
+footer a {
+  float: left;
+  margin: 5px;
+}
+
+.pet-image {
+  height: 280px;
+  width: 280px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 4px solid #ffb347;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   REQUIREMENT #7: jQuery Method #1 - .addClass() / .removeClass()
+   ======================================== */
+
+/* CREATIVITY FEATURE: Bounce animation */
+@keyframes bounce {
+  0%, 100% { 
+    transform: translateY(0) rotate(-2deg); 
+  }
+  50% { 
+    transform: translateY(-20px) rotate(2deg); 
+  }
+}
+
+.pet-image.happy {
+  border-color: #50c878;
+  box-shadow: 0 0 30px rgba(80, 200, 120, 0.6);
+  animation: bounce 0.7s ease-in-out infinite;
+}
+
+.pet-image.sad {
+  border-color: #a9a9a9;
+  box-shadow: 0 0 20px rgba(169, 169, 169, 0.4);
+  opacity: 0.75;
+  filter: grayscale(30%);
+}
+
+.pet-image.tired {
+  border-color: #ffa500;
+  box-shadow: 0 0 25px rgba(255, 165, 0, 0.5);
+  opacity: 0.8;
+  transform: rotate(-5deg);
+}
+
+.dashboard div {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 19px;
+  color: #333;
+}
+
+.pet-image-container {
+  float: left;
+  padding: 15px;
+  background: linear-gradient(135deg, #fff5e6 0%, #ffe6cc 100%);
+  border-radius: 25px;
+  margin-right: 20px;
+}
+
+.dashboard {
+  float: left;
+  padding: 25px;
+  background: #f8f9fa;
+  border-radius: 20px;
+  border-left: 5px solid #4a90e2;
+}
+
+/* ========================================
+   REQUIREMENT #6: Visual notification styling
+   ======================================== */
+
+.notification {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  color: white;
+  padding: 18px 25px;
+  border-radius: 15px;
+  margin: 25px 0;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+  transition: all 0.3s ease;
+  border: 2px solid white;
+}
+
+.notification.hidden {
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.notification.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.button-container {
+  margin-top: 25px;
+  clear: both;
+}
+
+.button-container button {
+  width: 110px;
+  height: 45px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  text-align: center;
+  display: inline-block;
+  float: left;
+  font-size: 16px;
+  background-color: #4a90e2;
+  border: 3px solid #357abd;
+  border-radius: 12px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  font-family: Arial, Verdana, sans-serif;
+}
+
+.button-container button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.button-container button:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Different colors for different buttons */
+.treat-button {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%) !important;
+  border-color: #c92a2a !important;
+}
+
+.treat-button:hover {
+  background: linear-gradient(135deg, #ff5252 0%, #e04d5f 100%) !important;
+}
+
+.play-button {
+  background: linear-gradient(135deg, #51cf66 0%, #37b24d 100%) !important;
+  border-color: #2b8a3e !important;
+}
+
+.play-button:hover {
+  background: linear-gradient(135deg, #40c057 0%, #2f9e44 100%) !important;
+}
+
+.exercise-button {
+  background: linear-gradient(135deg, #74c0fc 0%, #4dabf7 100%) !important;
+  border-color: #1c7ed6 !important;
+}
+
+.exercise-button:hover {
+  background: linear-gradient(135deg, #5eb8f7 0%, #339af0 100%) !important;
+}
+
+.sleep-button {
+  background: linear-gradient(135deg, #da77f2 0%, #cc5de8 100%) !important;
+  border-color: #9c36b5 !important;
+}
+
+.sleep-button:hover {
+  background: linear-gradient(135deg, #d160f0 0%, #be4bdb 100%) !important;
+}
